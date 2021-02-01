@@ -2,6 +2,7 @@
 The code in this repository is used in the [Bachelor Thesis](https://github.com/RRMauritz/PDBQ/Mauritz_BA_EEMCS.pdf) of Rutger Mauritz
 
 ##File descriptions:
+
 `Runpannel`:
 - From this file both the performance of the DAE and PIBN model are tested on several synthetic data sets
 - The results are printed for comparison
