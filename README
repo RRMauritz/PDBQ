@@ -8,12 +8,12 @@ The code in this repository is used in the Bachelor Thesis of Rutger Mauritz
 
 `DataQuality`:
 - This file contains quality measures that are used for evaluation of the model performance
-- Those quality measures are a.o. used in Runpannel
+- Those quality measures are a.o. used in `Runpannel`
 
 `DataPyAgrum`:
 - Used for creating synthetic data sets via a Bayesian Network
 - Contains an example of how a Bayesian Network can be constructed such that data can be sampled from it
-- Used in Runpannel
+- Used in `Runpannel`
 
 `DataConversion`:
 - Contains two methods:
