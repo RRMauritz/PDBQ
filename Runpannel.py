@@ -40,10 +40,10 @@ for version in ['9']:
     print(' Data information:')
     print('  Average JSD:', np.round(Q_JSD(testGT, test_corr), 5))
     print('  Average JSD ocr:', np.round(Q_JSD(testGT[corr_ind_test, :], test_corr[corr_ind_test, :]), 5))
-    print('  Average entropy:', Q_H(test_corr))
+    print('  Entropy:', Q_H(test_corr))
 
     # Denoising Autoencoder
-    outputs1, _ = run_ae_denoising(testGT, train_corr, test_corr, structure, v=0.30, n=20, e=100, bs=20)
+    outputs1, _ = run_ae_denoising(train_corr, test_corr, structure, v=0.30, n=20, e=100, bs=20)
     # BN Model supervised
     path = os.path.join(dir, 'BayesNetwork' + version + '.bif')
     outputs2 = run_bn_sup(path, test_corr, structure)
