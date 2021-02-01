@@ -1,19 +1,21 @@
-In this Readme I briefly describe what each of the files in this folder contain and how they can be used alltogether.
+## Project summary:
+The code in this repository is used in the Bachelor Thesis of Rutger Mauritz
 
-Runpannel:
+##File descriptions:
+`Runpannel`:
 - From this file both the performance of the DAE and PIBN model are tested on several synthetic data sets
 - The results are printed for comparison
 
-DataQuality:
+`DataQuality`:
 - This file contains quality measures that are used for evaluation of the model performance
 - Those quality measures are a.o. used in Runpannel
 
-DataPyAgrum:
+`DataPyAgrum`:
 - Used for creating synthetic data sets via a Bayesian Network
 - Contains an example of how a Bayesian Network can be constructed such that data can be sampled from it
 - Used in Runpannel
 
-DataConversion:
+`DataConversion`:
 - Contains two methods:
 	1) dataConversion: is used to add noise to the ground truth data and converts the synthetic data
 	   to one-hot encoding like structures
@@ -21,31 +23,28 @@ DataConversion:
 	   this is a part of the regularization of the DAE
 - Used in AE_denoising
 
-BN_sup:
+`BN_sup`:
 - Implementation of the supervised PIBN model. It loads a pre-defined Bayesian Network (.bif file)
   and propagates the probabilistic data as virtual evidence through this BN, after which it extracts
   the posterior probabilities
 
-AE_denoising:
+`AE_denoising`:
 - Implementation of the Denoising Autoencoder Model. This trained model is then applied to unseen
   corrupted test-data after which the resulting output is return, together with the training history
 
-AE_Undercomplete & AE_overcomplete:
-- Similar as above, however not in method-form yet. Use different regularization techniques (bottleneck and penalty on
-  activations, respectively)
-
-Backend:
+`Backend`:
 - Contains a method jsd that is a Keras implementation of the Jensen Shannon Divergence
 - Used in AE_denoising for training
 
 ------------------------------------------------------------------------
-Needed packages:
+## Needed packages:
 - Numpy
 - Pandas
 - Keras
 - PyAgrum: https://agrum.gitlab.io/pages/pyagrum.html
 - Sklearn
 ------------------------------------------------------------------------
-Final note:
-In the files mentioned above, the data sets and BN's are loaded from certain paths.
+
+## Additional notes:
+- In the files mentioned above, the data sets and BN's are loaded from certain paths.
 For using this code, one needs to adjusts these paths
