@@ -1,5 +1,5 @@
 ## Project summary:
-The code in this repository is used in the [Bachelor Thesis](https://github.com/RRMauritz/PDBQ/Mauritz_BA_EEMCS.pdf) of Rutger Mauritz
+The code in this repository is used in the [Bachelor Thesis](https://github.com/RRMauritz/PDBQ/blob/master/Mauritz_BA_EEMCS.pdf) of Rutger Mauritz
 
 ## File descriptions:
 
