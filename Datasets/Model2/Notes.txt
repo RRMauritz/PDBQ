@@ -1,0 +1,9 @@
+Getrained met geen noise toegevoegd, is dim 3 nog in staat perfecte reconstructie te bewerkstelligen
+-Structure In-5-3-5-Out: good results
+-Structure In-5-4-5-Out: a bit better results, not notably
+
+
+-Structure 11-3-11 with relu activation gives quite good results:
+	- Van 0.037 -> 0.0118
+	- Van 0.21 -> 0.06
+	- Total fauls = 2.1% (12% on corrupted records)

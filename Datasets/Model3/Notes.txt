@@ -1,0 +1,9 @@
+- Structure In-5-9-5-Out gives a better output than input
+- Structure In-10-9-10-Out gives better results
+- Structure In-10-5-9-5-10-Out gives worse results
+
+Denoising AE (0.80) 10 nodes, relu, lr = 0.005, bs = 20, 140 epochs
+on 0.20 corrupted data with 0.5 per attribute:
+	- From 0.04315 -> 0.01352
+	- From 0.2158 -> 0.0611
+ 	- Fauls: 11.9% - 8% 

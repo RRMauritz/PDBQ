@@ -1,0 +1,77 @@
+network "MyNetwork6" {
+// written by aGrUM 0.16.3
+}
+
+variable A {
+   type discrete[4] {0, 1, 2, 3};
+}
+
+variable B {
+   type discrete[5] {0, 1, 2, 3, 4};
+}
+
+variable C {
+   type discrete[3] {0, 1, 2};
+}
+
+variable D {
+   type discrete[3] {0, 1, 2};
+}
+
+variable E {
+   type discrete[2] {0, 1};
+}
+
+variable F {
+   type discrete[3] {0, 1, 2};
+}
+
+variable G {
+   type discrete[2] {0, 1};
+}
+
+probability (A) {
+   default 0.25 0.25 0.25 0.25;
+}
+probability (B) {
+   default 0.2 0.2 0.2 0.2 0.2;
+}
+probability (C | A) {
+   (0) 0.2 0.3 0.5;
+   (1) 0.1 0.8 0.1;
+   (2) 0.1 0.9 0.1;
+   (3) 0 0.1 0.9;
+}
+probability (D | B) {
+   (0) 0.9 0.05 0.05;
+   (1) 0.8 0.15 0.05;
+   (2) 0.2 0 0.8;
+   (3) 0 0.5 0.5;
+   (4) 0.05 0.05 0.9;
+}
+probability (E | A) {
+   (0) 0.05 0.95;
+   (1) 1 0;
+   (2) 0.9 0.1;
+   (3) 0.95 0.05;
+}
+probability (F | C, E) {
+   (0, 0) 0.93 0.02 0.05;
+   (1, 0) 0 0.99 0.01;
+   (2, 0) 0.9 0.05 0.05;
+   (0, 1) 0.1 0.02 0.88;
+   (1, 1) 0.01 0.99 0;
+   (2, 1) 0.7 0.1 0.2;
+}
+probability (G | F, D) {
+   (0, 0) 1 0;
+   (1, 0) 0.9 0.1;
+   (2, 0) 0.1 0.9;
+   (0, 1) 1 0;
+   (1, 1) 1 0;
+   (2, 1) 0 1;
+   (0, 2) 0 1;
+   (1, 2) 0.5 0.5;
+   (2, 2) 1 0;
+}
+
