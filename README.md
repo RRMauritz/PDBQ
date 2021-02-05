@@ -5,7 +5,7 @@ The code in this repository is used in the [Bachelor Thesis](https://github.com/
 
 `Runpannel`:
 - From this file both the performance of the DAE and PIBN model are tested on several synthetic data sets
-- The results are printed for comparison
+- The data-sets are loaded from the `\Datasets` directory
 
 `DataQuality`:
 - This file contains quality measures that are used for evaluation of the model performance
@@ -46,6 +46,3 @@ The code in this repository is used in the [Bachelor Thesis](https://github.com/
 - Sklearn
 ------------------------------------------------------------------------
 
-## Additional notes:
-- In the files mentioned above, the data sets and BN's are loaded from certain paths.
-For using this code, one needs to adjusts these paths

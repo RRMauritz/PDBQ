@@ -5,6 +5,7 @@ from DataQuality import Q_JSD, Q_H, Q_faul
 from AE_denoising import run_ae_denoising
 from BN_sup import run_bn_sup
 from DataConversion import dataConversion
+from Backend import visResults
 
 
 def results(outputs, testGT, test_corr, corr_ind_test, model: str):
@@ -20,11 +21,13 @@ def results(outputs, testGT, test_corr, corr_ind_test, model: str):
           np.round(avg_b, 5), '\n\n')
 
 
-# ['2', '3', '4', '6', '9']
+versions = ['2', '3', '4', '6', '9']
+version_lst = [v for v in versions for i in range(10)]
+#res_file = open('Results300.txt', 'w')
 
 for version in ['9']:
     print('Model ' + version + '--------------------------------------------')
-    dir = r"C:\Users\Rutger Mauritz\Google Drive\Studie Toegepaste Wiskunde\BSc\Module 12\Bachelor Assignment\Datasets" + '\Model' + version
+    dir = r"Datasets"+ '\Model' + version
     data = pd.read_csv(os.path.join(dir, 'Data' + version + '.csv')).values
 
     GT, data_corr, structure, corr_ind = dataConversion(data, 0.2, [2], 1, 0.5, 5, R=True)
@@ -38,15 +41,21 @@ for version in ['9']:
 
     # Information before applying the models
     print(' Data information:')
-    print('  Average JSD:', np.round(Q_JSD(testGT, test_corr), 5))
+    print(' Average JSD:', np.round(Q_JSD(testGT, test_corr), 5))
     print('  Average JSD ocr:', np.round(Q_JSD(testGT[corr_ind_test, :], test_corr[corr_ind_test, :]), 5))
     print('  Entropy:', Q_H(test_corr))
 
     # Denoising Autoencoder
     outputs1, _ = run_ae_denoising(train_corr, test_corr, structure, v=0.30, n=20, e=100, bs=20)
     # BN Model supervised
-    path = os.path.join(dir, 'BayesNetwork' + version + '.bif')
-    outputs2 = run_bn_sup(path, test_corr, structure)
+    # path = os.path.join(dir, 'BayesNetwork' + version + '.bif')
+    # outputs2 = run_bn_sup(path, test_corr, structure)
 
     results(outputs1, testGT, test_corr, corr_ind_test, 'DAE')
-    results(outputs2, testGT, test_corr, corr_ind_test, 'PIBN')
+    # results(outputs2, testGT, test_corr, corr_ind_test, 'PIBN')
+
+    # visResults(history)
+
+    #res_file.write('Data ' + version + ':  ' + str(np.round(Q_JSD(testGT, outputs1), 5))+'\n')
+
+#res_file.close()

@@ -5,8 +5,8 @@ import os
 # In this file one can create a Bayesian Network via PyAgrum
 # The network is then stored
 
-
-bn = gum.BayesNet('MyNetwork10')
+version = '11'
+bn = gum.BayesNet('MyNetwork'+version)
 
 # Nodes = Discrete RV's
 A = bn.add(gum.LabelizedVariable('A', 'A', 2))
@@ -25,14 +25,14 @@ bn.cpt(C)[:] = [[1, 0], [0, 1]]
 # Save data and model architecture to separate folder
 dbg = gum.BNDatabaseGenerator(bn)
 dbg.drawSamples(10000)
-version = '10'
 
-#TODO: dit lijkt niet helemaal meer te werken:
-dir = 'C:\\Users\Rutger Mauritz\\Google Drive\\Studie Toegepaste Wiskunde\\Module 12\\Bachelor Assignment\\Datasets'
+dir = 'Datasets'
 os.chdir(dir)
 dir += '\Model' + version
 os.mkdir('Model' + version)
 
-dbg.toCSV(os.path.join(dir, 'Data' + version + '.csv'))
+print(os.path.join(dir, 'Data' + version + '.csv'))
+
+#dbg.toCSV(os.path.join(dir, 'Data' + version + '.csv'))
 viz.pngize(bn, os.path.join(dir, 'BayesNetwork' + version))
-gum.saveBN(bn, os.path.join(dir, 'BayesNetwork' + version + '.bif'))
+#gum.saveBN(bn, os.path.join(dir, 'BayesNetwork' + version + '.bif'))

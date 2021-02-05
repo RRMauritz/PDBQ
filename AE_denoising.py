@@ -24,7 +24,7 @@ def run_ae_denoising(train, test, structure, v, n, e, bs):
     structure_0 = [0] + structure
 
     # Split the train data in a train and validation set
-    train_corr, val_corr = train_test_split(train, train_size=0.7)
+    train_corr, val_corr = train_test_split(train, train_size=0.80)
     # Convert the data to a format so that in can be used as target in the autoencoder
     # train_attr_corr[i,j] = the one-hot encoding for category i of data-point j
     train_attr_corr = [train_corr[:, i:j] for i, j in zip(np.cumsum(structure_0[:-1]), np.cumsum(structure_0[1:]))]

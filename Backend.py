@@ -1,5 +1,6 @@
 import keras.backend as K
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 
 # NOTE: Keras uses base e for the logarithms!
@@ -20,6 +21,16 @@ class PrinterCallback(tf.keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         print('EPOCH: {}, Train Loss: {:05.4f}, Val Loss: {:05.4f}'.format(epoch,
-                                                               logs['loss'],
-                                                               logs['val_loss']))
+                                                                           logs['loss'],
+                                                                           logs['val_loss']))
 
+
+def visResults(history):
+    # summarize history for loss
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['Train', 'Validation'], loc='upper left')
+    plt.show()
