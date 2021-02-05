@@ -1,3 +1,6 @@
+![Cleaning probabilistic data](Images/Process.png?raw=true "Cleaning probabilistic data")
+
+
 ## Project summary:
 The code in this repository is used in the [Bachelor Thesis](https://github.com/RRMauritz/PDBQ/blob/master/Mauritz_BA_EEMCS.pdf) of Rutger Mauritz
 
@@ -47,7 +50,12 @@ The code in this repository is used in the [Bachelor Thesis](https://github.com/
 - Contains the data sets that are used in `runpannel`to evaluate the model performances.
 - Each of these data sets contains  a description of its underling Bayesian Network (BN) model and comes with a .csv file containing the data, 
 a .png file for a visualization of the BN network and a .bif file that can be used in PyAgrum. 
-- `\Results`: a directory for storing the results of model evaluations. 
+
+`\Results`: 
+- A directory for storing the results of model evaluations. 
+
+`\Images`: 
+- Contains images that are used in the [Bachelor Thesis](https://github.com/RRMauritz/PDBQ/blob/master/Mauritz_BA_EEMCS.pdf)
 
 ## Needed packages:
 - Numpy
