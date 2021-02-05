@@ -37,7 +37,18 @@ The code in this repository is used in the [Bachelor Thesis](https://github.com/
 - Contains a method jsd that is a Keras implementation of the Jensen Shannon Divergence
 - Used in AE_denoising for training
 
-------------------------------------------------------------------------
+
+##Directories
+
+`\Archive`:
+- Contains some extra files that are not necessary for the main process anymore. 
+
+`\Datasets`: 
+- Contains the data sets that are used in `runpannel`to evaluate the model performances.
+- Each of these data sets contains  a description of its underling Bayesian Network (BN) model and comes with a .csv file containing the data, 
+a .png file for a visualization of the BN network and a .bif file that can be used in PyAgrum. 
+- `\Results`: a directory for storing the results of model evaluations. 
+
 ## Needed packages:
 - Numpy
 - Pandas

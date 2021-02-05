@@ -1,6 +1,0 @@
-DAE (10% attr.), data is 20% corrupted, 1 attr. 0.5  division
-20 nodes, relu, jsd, lr = 0.005, output:
-	- 0.04207 -> 0.0044
-	- 0.2158 -> 0.02
-	- 0.31904 -> 0.03287
-	-Fauls: 7.6% (0.10438 avg faul) and 2.05% (1.55196 avg faul)
