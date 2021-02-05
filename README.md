@@ -38,7 +38,7 @@ The code in this repository is used in the [Bachelor Thesis](https://github.com/
 - Used in AE_denoising for training
 
 
-##Directories
+## Directories
 
 `\Archive`:
 - Contains some extra files that are not necessary for the main process anymore. 
